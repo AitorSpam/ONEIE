@@ -1,5 +1,3 @@
-// --- BASE DE DATOS DEL REPOSITORIO DE INSTRUMENTOS ---
-// Para añadir un nuevo instrumento, simplemente copia un bloque {} y pégalo al final, cambiando los datos.
 const repositoryData = [
     {
        id: 1,
