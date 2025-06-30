@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- RENDERIZADO DEL REPOSITORIO ---
    // --- RENDERIZADO DEL REPOSITORIO (VERSIÓN MEJORADA) ---
+// --- RENDERIZADO DEL REPOSITORIO (VERSIÓN MEJORADA Y CORRECTA) ---
 function renderRepository(items) {
     repoResultsContainer.innerHTML = ''; // Limpiar resultados anteriores
     if (items.length === 0) {
