@@ -5,26 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
     const constructFilter = document.getElementById('repo-filter-construct');
 
     // --- RENDERIZADO DEL REPOSITORIO ---
-    function renderRepository(items) {
-        repoResultsContainer.innerHTML = ''; // Limpiar resultados anteriores
-        if (items.length === 0) {
-            repoResultsContainer.innerHTML = '<p>No se encontraron instrumentos con esos criterios.</p>';
-            return;
-        }
-        items.forEach(item => {
-            const card = document.createElement('div');
-            card.className = 'card repo-item';
-            card.innerHTML = `
-                <h3>${item.name}</h3>
-                <p><strong>Autor/Validación:</strong> ${item.author}</p>
-                <p><strong>Constructo:</strong> ${item.construct}</p>
-                <p><strong>Población:</strong> ${item.population}</p>
-                <a href="${item.link}" class="link" target="_blank">Ver Detalles</a>
-            `;
-            repoResultsContainer.appendChild(card);
-        });
+   // --- RENDERIZADO DEL REPOSITORIO (VERSIÓN MEJORADA) ---
+function renderRepository(items) {
+    repoResultsContainer.innerHTML = ''; // Limpiar resultados anteriores
+    if (items.length === 0) {
+        repoResultsContainer.innerHTML = '<p class="no-results">No se encontraron instrumentos con esos criterios.</p>';
+        return;
     }
-
+    items.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card repo-item';
+        card.innerHTML = `
+            <h3>${item.name}</h3>
+            <p class="repo-subtitle">${item.scaleFullName}</p>
+            <div class="repo-details">
+                <p><strong>Variable:</strong> ${item.variable}</p>
+                <p><strong>Definición:</strong> ${item.definition}</p>
+                <p><strong>Nº de Ítems:</strong> ${item.items}</p>
+                <p><strong>Fuente Principal:</strong> ${item.authors}</p>
+                <p class="repo-psychometrics">${item.reliabilityEC}</p>
+                <p class="repo-psychometrics">${item.validityEC}</p>
+            </div>
+            <a href="${item.sourceLink}" class="link" target="_blank" rel="noopener noreferrer">Ver Artículo Fuente</a>
+        `;
+        repoResultsContainer.appendChild(card);
+    });
+}
     // --- RENDERIZADO DEL BLOG ---
     function renderBlog(posts) {
         blogPostsContainer.innerHTML = '';
