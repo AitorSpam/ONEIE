@@ -195,8 +195,34 @@ header nav {
     text-align: left;
 }
 
-.repo-item p {
-    margin-bottom: 0.5rem;
+.repo-subtitle {
+    font-style: italic;
+    color: #777;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.repo-details p {
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+.repo-details strong {
+    color: var(--primary-color);
+}
+
+.repo-psychometrics {
+    background-color: #eef2f5; /* Un fondo sutil para destacar */
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    border-left: 3px solid var(--secondary-color);
+}
+
+.no-results {
+    grid-column: 1 / -1; /* Ocupa todo el ancho si no hay resultados */
+    text-align: center;
+    padding: 2rem;
 }
 
 /* --- Formulario de Contacto --- */
